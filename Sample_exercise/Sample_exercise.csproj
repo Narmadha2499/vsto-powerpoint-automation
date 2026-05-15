@@ -187,7 +187,10 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\GroupShapeTraversalService.cs" />
     <Compile Include="Services\ShapeDiagnosticService.cs" />
+    <Compile Include="Utilities\BooleanResult.cs" />
+    <Compile Include="Utilities\GroupShapeReportInfo.cs" />
     <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\ShapeDiagnosticInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

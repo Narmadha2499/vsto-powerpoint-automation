@@ -1,5 +1,6 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
 using Sample_exercise.Services;
+using Sample_exercise.Utilities;
 using System;
 using System.Windows.Forms;
 
@@ -60,6 +61,39 @@ namespace Sample_exercise
                     "Error",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGroupShapeTraversal_Click(
+    object sender,
+    RibbonControlEventArgs e)
+        {
+            try
+            {
+                GroupShapeTraversalService service =
+                    new GroupShapeTraversalService();
+
+                BooleanResult<string> result =
+                    service.GenerateGroupShapeReport();
+
+                if (!result.Success)
+                {
+                    MessageBox.Show(
+                        result.Message,
+                        "Group Shape Report");
+
+                    return;
+                }
+
+                MessageBox.Show(
+                    result.Result,
+                    "Group Shape Report");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    ex.Message,
+                    "Error");
             }
         }
     }
