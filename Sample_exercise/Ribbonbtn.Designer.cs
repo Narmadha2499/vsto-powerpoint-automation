@@ -43,84 +43,56 @@
             this.group1 = this.Factory.CreateRibbonGroup();
             this.btnPresentation = this.Factory.CreateRibbonButton();
             this.btnShapeDiagnostics = this.Factory.CreateRibbonButton();
-
+            this.btnGroupShapeTraversal = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
-
             // 
             // tab1
             // 
-            this.tab1.ControlId.ControlIdType =
-                Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-
+            this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
-
             this.tab1.Label = "TabAddIns";
-
             this.tab1.Name = "tab1";
-
             // 
             // group1
             // 
             this.group1.Items.Add(this.btnPresentation);
-
             this.group1.Items.Add(this.btnShapeDiagnostics);
-
+            this.group1.Items.Add(this.btnGroupShapeTraversal);
             this.group1.Label = "group1";
-
             this.group1.Name = "group1";
-
             // 
             // btnPresentation
             // 
             this.btnPresentation.Label = "Get Presentation Info";
-
             this.btnPresentation.Name = "btnPresentation";
-
-            this.btnPresentation.Click +=
-                new Microsoft.Office.Tools.Ribbon
-                .RibbonControlEventHandler(
-                    this.btnPresentation_Click);
-
+            this.btnPresentation.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnPresentation_Click);
             // 
             // btnShapeDiagnostics
             // 
-            this.btnShapeDiagnostics.Label =
-                "Shape Diagnostics";
-
-            this.btnShapeDiagnostics.Name =
-                "btnShapeDiagnostics";
-
-            this.btnShapeDiagnostics.Click +=
-                new Microsoft.Office.Tools.Ribbon
-                .RibbonControlEventHandler(
-                    this.btnShapeDiagnostics_Click);
-
+            this.btnShapeDiagnostics.Label = "Shape Diagnostics";
+            this.btnShapeDiagnostics.Name = "btnShapeDiagnostics";
+            this.btnShapeDiagnostics.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnShapeDiagnostics_Click);
+            // 
+            // btnGroupShapeTraversal
+            // 
+            this.btnGroupShapeTraversal.Label = "Group Shape Report";
+            this.btnGroupShapeTraversal.Name = "btnGroupShapeTraversal";
+            this.btnGroupShapeTraversal.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnGroupShapeTraversal_Click);
             // 
             // Ribbonbtn
             // 
             this.Name = "Ribbonbtn";
-
-            this.RibbonType =
-                "Microsoft.PowerPoint.Presentation";
-
+            this.RibbonType = "Microsoft.PowerPoint.Presentation";
             this.Tabs.Add(this.tab1);
-
-            this.Load +=
-                new Microsoft.Office.Tools.Ribbon
-                .RibbonUIEventHandler(
-                    this.Ribbonbtn_Load);
-
+            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbonbtn_Load);
             this.tab1.ResumeLayout(false);
-
             this.tab1.PerformLayout();
-
             this.group1.ResumeLayout(false);
-
             this.group1.PerformLayout();
-
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -132,6 +104,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnPresentation;
 
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnShapeDiagnostics;
+
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGroupShapeTraversal;
     }
 
     partial class ThisRibbonCollection
