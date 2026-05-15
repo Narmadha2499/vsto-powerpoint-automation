@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text;
 
@@ -21,6 +21,12 @@ namespace Sample_exercise.Utilities
         public static void Initialize(string logFilePath)
         {
             _logFilePath = logFilePath;
+        }
+
+        public static void LogError(Exception exception)
+        {
+            var logger = new Logger(typeof(Logger));
+            logger.Error("An unhandled exception occurred", exception);
         }
 
         public void Info(string message)

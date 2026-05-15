@@ -44,6 +44,7 @@
             this.btnPresentation = this.Factory.CreateRibbonButton();
             this.btnShapeDiagnostics = this.Factory.CreateRibbonButton();
             this.btnGroupShapeTraversal = this.Factory.CreateRibbonButton();
+            this.btnTaskPaneInfo = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             this.group1.Items.Add(this.btnPresentation);
             this.group1.Items.Add(this.btnShapeDiagnostics);
             this.group1.Items.Add(this.btnGroupShapeTraversal);
+            this.group1.Items.Add(this.btnTaskPaneInfo);
             this.group1.Label = "group1";
             this.group1.Name = "group1";
             // 
@@ -80,6 +82,12 @@
             this.btnGroupShapeTraversal.Label = "Group Shape Report";
             this.btnGroupShapeTraversal.Name = "btnGroupShapeTraversal";
             this.btnGroupShapeTraversal.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnGroupShapeTraversal_Click);
+            // 
+            // btnTaskPaneInfo
+            // 
+            this.btnTaskPaneInfo.Label = "Show Task Pane";
+            this.btnTaskPaneInfo.Name = "btnTaskPaneInfo";
+            this.btnTaskPaneInfo.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnTaskPaneInfo_Click);
             // 
             // Ribbonbtn
             // 
@@ -106,6 +114,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnShapeDiagnostics;
 
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGroupShapeTraversal;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnTaskPaneInfo;
     }
 
     partial class ThisRibbonCollection

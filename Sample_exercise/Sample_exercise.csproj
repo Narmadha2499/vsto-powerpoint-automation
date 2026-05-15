@@ -184,15 +184,24 @@
   <ItemGroup>
     <Compile Include="Helpers\PowerPointContextHelper.cs" />
     <Compile Include="Helpers\ShapeValidationHelper.cs" />
+    <Compile Include="Helpers\TaskPaneValidationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\GroupShapeTraversalService.cs" />
     <Compile Include="Services\ShapeDiagnosticService.cs" />
+    <Compile Include="Services\SlideInfoTaskPaneService.cs" />
+    <Compile Include="TaskPaneViews\SlideInfoTaskPaneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TaskPaneViews\SlideInfoTaskPaneControl.Designer.cs">
+      <DependentUpon>SlideInfoTaskPaneControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\BooleanResult.cs" />
     <Compile Include="Utilities\GroupShapeReportInfo.cs" />
     <Compile Include="Utilities\Logger.cs" />
     <Compile Include="Utilities\ShapeDiagnosticInfo.cs" />
+    <Compile Include="Utilities\SlideInfoReportInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
