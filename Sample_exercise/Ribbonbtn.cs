@@ -1,6 +1,6 @@
 ﻿using Microsoft.Office.Tools.Ribbon;
-using Sample_exercise.Services;
 using Sample_exercise.Utilities;
+using Sample_exercise.Services;
 using System;
 using System.Windows.Forms;
 
@@ -11,10 +11,15 @@ namespace Sample_exercise
         private readonly PresentationInfoService _presentationInfoService =
             new PresentationInfoService();
 
+        private SlideInfoTaskPaneService slideInfoTaskPaneService;
+
         private void Ribbonbtn_Load(
             object sender,
             RibbonUIEventArgs e)
         {
+            slideInfoTaskPaneService =
+                new SlideInfoTaskPaneService(
+                    Globals.ThisAddIn.Application);
         }
 
         private void btnPresentation_Click(
@@ -65,8 +70,8 @@ namespace Sample_exercise
         }
 
         private void btnGroupShapeTraversal_Click(
-    object sender,
-    RibbonControlEventArgs e)
+            object sender,
+            RibbonControlEventArgs e)
         {
             try
             {
@@ -94,6 +99,24 @@ namespace Sample_exercise
                 MessageBox.Show(
                     ex.Message,
                     "Error");
+            }
+        }
+
+        private void btnTaskPaneInfo_Click(
+            object sender,
+            RibbonControlEventArgs e)
+        {
+            try
+            {
+                slideInfoTaskPaneService.ShowTaskPane();
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(
+                    exception.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -25,7 +25,7 @@ namespace Sample_exercise.Utilities
                 error);
         }
 
-        private BooleanResult(
+        public BooleanResult(
             bool success = true,
             string message = null)
         {
@@ -34,6 +34,8 @@ namespace Sample_exercise.Utilities
         }
 
         public bool Success { get; protected set; }
+
+        public bool IsValid => Success;
 
         public string Message { get; protected set; }
     }
@@ -61,6 +63,8 @@ namespace Sample_exercise.Utilities
         }
 
         public bool Success { get; protected set; }
+
+        public bool IsValid => Success;
 
         public string Message { get; protected set; }
 
